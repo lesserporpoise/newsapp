@@ -6,7 +6,7 @@ import SearchBar from './components/searchBar/SearchBar'
 import NewsCard from './components/newsCard/NewsCard'
 import Ranking from './components/ranking/Ranking'
 
-let serverUrl='localhost:3501/api/headlines'
+let serverUrl='/api/headlines'
 let newsUrl = 'https://newsapi.org/v2/top-headlines?' +
 'country=us&' +
 'apiKey=890966d216064af5975cc3819e586259'
@@ -22,7 +22,7 @@ class App extends Component{
   }
 
   componentDidMount(){
-    axios.get(newsUrl).then((response)=>{console.log(response);
+    axios.get(newsUrl).then((response)=>{
     this.setState({articles:response.data.articles[1].title})
     let myArticles = []
     let myUrls=[]
@@ -30,13 +30,11 @@ class App extends Component{
     for(let i in response.data.articles)
     {myArticles.push(response.data.articles[i].title);
     myUrls.push(response.data.articles[i].url)}
-    
-    console.log(myArticles)
+
     this.setState({
       stuff:myArticles,
       urls:myUrls
     })
-    console.log(this.state.stuff,this.state.urls)
     })
   }
   

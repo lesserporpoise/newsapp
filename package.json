@@ -20,5 +20,6 @@
   "devDependencies": {},
   "author": "",
   "license": "ISC",
-  "keywords": []
+  "keywords": [],
+  "proxy": "http://localhost:3501"
 }

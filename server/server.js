@@ -13,5 +13,5 @@ app.use    (bodyParser.json());
 app.listen (port,()=>console.log("Playing Wubstep on port:"+port))
 app.get    (baseUrl, controllers.read)
 app.post   (baseUrl,controllers.create)
-app.put    (baseUrl+"/:id",controllers.update)
-app.delete (baseUrl+"/:id",controllers.delete)
+app.put    (baseUrl+"/:ID",controllers.update)
+app.delete (baseUrl+"/:ID",controllers.delete)

@@ -1,39 +1,58 @@
-let scoreArr=[];
-let id=0;
+let scoreArr=[
+    {ID:1,Score:0},
+    {ID:2,Score:0},
+    {ID:3,Score:0},
+    {ID:4,Score:0},
+    {ID:5,Score:0},
+    {ID:6,Score:0},
+    {ID:7,Score:0},
+    {ID:8,Score:0},
+    {ID:9,Score:0},
+    {ID:10,Score:0},
+    {ID:11,Score:0},
+    {ID:12,Score:0},
+    {ID:13,Score:0},
+    {ID:14,Score:0},
+    {ID:15,Score:0},
+    {ID:16,Score:0},
+    {ID:17,Score:0},
+    {ID:18,Score:0},
+    {ID:19,Score:0},
+    {ID:20,Score:0}
+];
+let id=21;
 
 
 module.exports = {
     read: (req,res) =>{
-        res.status(200).send(
-            "sending the datars...  " +JSON.stringify(scoreArr));
+        res.status(200).send(JSON.stringify(scoreArr));
     },
     create:(req,res) =>{
 
         let {score} = req.body;
-        scoreArr.push({id:id,score:score});
+        scoreArr.push({ID:id,Score:score*1});
         id++;
-        res.status(200).send(
-            "inputting the datars...  "+JSON.stringify(scoreArr))
+        res.status(200).send(JSON.stringify(scoreArr))
     },
     update:(req,res) =>{
-        const {score} = req.body;
-        const updateID = req.params.id;
-        const scoreIndex = scoreArr.findIndex(
-            val => {return val.id == updateID});
-        let val = scoreArr[scoreIndex];
-
-        scoreArr[scoreIndex] = {
-            id: val.id,
-            score: score || val.score
+        const {score} = req.body;                       ///
+        const updateID = req.params.ID;                 ///
+        const scoreIndex = scoreArr.findIndex(          ///
+            val => {return val.ID == updateID});        ///
+        let val = scoreArr[scoreIndex];                 ///
+        console.log(val,"look at me!!!");               ///
+                                                        ///
+        scoreArr[scoreIndex] = {                        ///
+            ID: val.ID,                                 ///
+            Score: score*1 || val.score*1
         }
-        res.status(200).send(
-            "modifying your datars...  "+JSON.stringify(scoreArr));
+        console.log(scoreArr,"let's make face gravy!")
+        res.status(200).send(JSON.stringify(scoreArr));
     },
     delete:(req,res) =>{
-        const deleteID = req.params.id;
-        scoreIndex=scoreArr.findIndex(val => val.id == deleteID);
+        const deleteID = req.params.ID;
+        scoreIndex=scoreArr.findIndex(val => val.ID == deleteID);
         scoreArr.splice(scoreIndex,1);
-        res.status(200).send(
-            "bleachbitting your datars...  "+JSON.stringify(scoreArr));
+        res.status(200).send(JSON.stringify(scoreArr));
     }
 }
