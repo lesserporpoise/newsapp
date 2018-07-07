@@ -42,7 +42,6 @@ class Ranking extends Component{
     }
 
     render(){
-        console.log(this.state,"ranking states")
         return(
         <div>
              <button onClick={()=>this.getScoresArr()}>See Scores</button>

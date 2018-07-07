@@ -35,18 +35,15 @@ module.exports = {
         res.status(200).send(JSON.stringify(scoreArr))
     },
     update:(req,res) =>{
-        const {score} = req.body;                       ///
-        const updateID = req.params.ID;                 ///
-        const scoreIndex = scoreArr.findIndex(          ///
-            val => {return val.ID == updateID});        ///
-        let val = scoreArr[scoreIndex];                 ///
-        console.log(val,"look at me!!!");               ///
-                                                        ///
-        scoreArr[scoreIndex] = {                        ///
-            ID: val.ID,                                 ///
+        const {score} = req.body;                       
+        const updateID = req.params.ID;                 
+        const scoreIndex = scoreArr.findIndex(          
+            val => {return val.ID == updateID});        
+        let val = scoreArr[scoreIndex];                     
+        scoreArr[scoreIndex] = {                        
+            ID: val.ID,                                 
             Score: score*1 || val.score*1
         }
-        console.log(scoreArr,"let's make face gravy!")
         res.status(200).send(JSON.stringify(scoreArr));
     },
     delete:(req,res) =>{
