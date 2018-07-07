@@ -28,15 +28,15 @@ class NewsCard extends Component{
         console.log(imgArr,"imgs")
         return(
             <div className="newsCardHolder">
-                <div class="renderOuter">
-                    <div claass="renderInner">
+                <div className="renderOuter">
+                    <div className="renderInner">
                         {titleArr.map((val,i)=>
-                        <div class="newsOuter">
-                            <a href={urlArr[i]}><div key={i} class="imgHolder">
-                            <img src={imgArr[i]} width="200" height="200"/>
-                                <div class="titleHolder">
-                                    <p>ID: {i+1}</p>
-                                    <p>{titleArr[i]}</p>
+                        <div key={"a"+i} className="newsOuter">
+                            <a href={urlArr[i]}><div key={"b"+i} className="imgHolder">
+                            <img key={"c"+i}  src={imgArr[i]} width="200" height="200"/>
+                                <div key={"d"+i} className="textHolder">
+                                    <p key={"e"+i}>ID: {i+1}</p>
+                                    <p key={"f"+i}>{titleArr[i]}</p>
                                 </div>
                             </div></a>
                         </div>)}
