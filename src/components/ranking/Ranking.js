@@ -12,7 +12,6 @@ class Ranking extends Component{
           }
     }
     getScoresArr(){
-        console.log("Get ScoreArr")
         axios.get(serverUrl).then((response)=>{this.setState({scoreArr:response.data})}).catch((err)=>console.log(err))
     }
 
@@ -33,7 +32,7 @@ class Ranking extends Component{
         console.log(this.state.idInput)
         let reqID = this.state.idInput;
         axios.put(serverUrl+"/"+reqID,{score:this.state.userInput}).then((response)=>{
-        this.setState({scoreArr:response.data});console.log(response.data)}).catch((err)=>console.log(err))
+        this.setState({scoreArr:response.data})}).catch((err)=>console.log(err))
     }
     deleteScore(){
         let reqID = this.state.idInput;
@@ -43,17 +42,27 @@ class Ranking extends Component{
 
     render(){
         return(
-        <div>
-             <button onClick={()=>this.getScoresArr()}>See Scores</button>
-             <div><p>{JSON.stringify(this.state.scoreArr)}</p></div>
-             <h3>Don't Use this... seriously</h3>
-             <input placeholder="Score" type="number" min="0" max="5" onChange={(e)=>this.changeHandler(e.target.value)}/>
-             <button onClick={()=>this.addToScoresArr()}>Make New Scores... Just 'cause</button>
-             <h3>Update or Delete Scores</h3>
-             <input placeholder="Score" type="number" min="0" max="5" onChange={(e)=>this.changeHandler(e.target.value)}/>
-             <input placeholder="ID" onChange={(e)=>this.idChangeHandler(e.target.value)}/>
-             <button onClick={()=>this.updateScoresArr()}>UpDaTe!</button>
-             <button onClick={()=>this.deleteScore()}>DeLeTe!</button>
+        <div className="rankingMain">
+            <div className="rankingSub1">
+                <div className="getMain">
+                    <button onClick={()=>this.getScoresArr()}>See Scores</button>
+                    <p>{JSON.stringify(this.state.scoreArr)}</p>
+                </div>
+            </div>
+            <div className="rankingSub2">
+                <div className="postMain">
+                    <h3>Don't Use this... seriously</h3>
+                    <input placeholder="Score" type="number" min="0" max="5" onChange={(e)=>this.changeHandler(e.target.value)}/>
+                    <button onClick={()=>this.addToScoresArr()}>Make New Scores... Just 'cause</button>
+                </div>
+                <div className="deleteMain">
+                    <h3>Update or Delete Scores</h3>
+                    <input placeholder="Score" type="number" min="0" max="5" onChange={(e)=>this.changeHandler(e.target.value)}/>
+                    <input placeholder="ID" onChange={(e)=>this.idChangeHandler(e.target.value)}/>
+                    <button onClick={()=>this.updateScoresArr()}>UpDaTe!</button>
+                    <button onClick={()=>this.deleteScore()}>DeLeTe!</button>
+                </div>
+            </div>
         </div>
         )}
 }

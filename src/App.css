@@ -1,16 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+body{
+  background-color:black(85, 134, 134);
+  background-image:url("./CityScape.jpg");
+  background-position:center;
+  font-family: 'Titillium Web', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+button{
+  transition: all 150ms linear;
+  cursor: pointer;
+  user-select: none;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+  color:black;
+  background-color: aqua;
+}
 .newsCardHolder{
-  background-color:darkgoldenrod;
-  border:1px solid red;
+  background-color:transparent;
+  display:flex;
+  flex-wrap:wrap;
+  margin:10px
 }
 .renderOuter{
+  display:flex;
+  flex-wrap:wrap;
   height :100vh;
   width: 100vw;
-  background-color:aqua;
+  background-color:transparent;
+  justify-content: center;
 }
 .renderInner{
+  display:flex;
+  flex-wrap:wrap;
+  height:92vh;
+  width:90vw;
+  background-color:transparent;
+  justify-content: center;
+}
+.newsOuter{   
+  display:flex;
+  flex-wrap:wrap;
+  border: 3px solid  black;
   height:200px;
-  width:200px;
-  background-color:wheat;
-  border:1px dashed teal;
+  width:300px;
+  border-radius:15px;
+  overflow: hidden;
+  margin:5px;
+
+}
+.imgHolder{
+  display:flex;
+  flex-wrap:wrap;
+  position:relative;
+  align-content: center;
+  flex-direction:column;
+  background-color:transparent;
+  width:300px;
+  height:200px;
+  background-image:url("https://www.petmd.com/sites/default/files/scared-kitten-shutterstock_191443322.jpg");
+  background-position:center;
+
+}
+img{
+width:300px;
+height:200px;
+position:absolute;
+opacity:.8;
+
+}
+.textHolder{
+  color:whitesmoke;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+  font-weight: bold;
+  text-decoration: none;
+  width:290px;
+  height:200px;
+  margin:0 0 0 10px;
+  display:flex;
+  flex-wrap:wrap;
+
+  z-index:0;
+
+}
+#newsText{
+
+}
+.headerMain{
+  background-color:black;
+}
+.headerSub{
+  display:flex;
+  justify-content:center;
+}
+.header{
+  color:white;
+  height:25px;
+  width:350px;
+  display:flex;
+  justify-content: center;
+}
+.searchBar{
+  display:flex;
+  justify-content: center;
+  background-color:black;
+  width:100vw;
+  height:5vh;
+}
+.searchDiv{
+  display:flex;
+  justify-content: center;
+  height:25px;
+  width:400px;
 }
 
+.appDivHeader{
+}
+.appDivSearch{
+  height:105vh;
+  display:flex;
+  justify-content: center;
+}
+.appDivRanking{
+
+  color: whitesmoke;
+}
+.appDivFooter{
+  color: whitesmoke;
+  background-color:black;
+  display:flex;
+  justify-content:center;
+}
+.rankingMain{
+  display:flex;
+  justify-content: center;
+
+}
+.rankingSub1{
+
+
+  width:48vw;
+}
+.rankingSub2{
+
+  width:48vw;
+}
+.getMain{
+
+
+  
+}
+.postMain{
+
+
+}
+.deleteMain{
+
+
+}

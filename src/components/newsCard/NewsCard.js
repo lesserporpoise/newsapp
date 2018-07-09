@@ -10,39 +10,19 @@ class NewsCard extends Component{
         }
     }
     render(){
-        console.log(this.props.data,"did props.data make it?")
-        let titleArr=[];
-        let urlArr=[];
-        let imgArr=[];
-        for(let i in this.props.data.articles){
-        titleArr.push(this.props.data.articles[i].title)
-        }
-        for(let i in this.props.data.articles){
-        urlArr.push(this.props.data.articles[i].url)
-        }
-        for(let i in this.props.data.articles){
-        imgArr.push(this.props.data.articles[i].urlToImage)
-        }
-        console.log(titleArr,"titles")
-        console.log(urlArr,"urls")
-        console.log(imgArr,"imgs")
         return(
-            <div className="newsCardHolder">
-                <div className="renderOuter">
-                    <div className="renderInner">
-                        {titleArr.map((val,i)=>
-                        <div key={"a"+i} className="newsOuter">
-                            <a href={urlArr[i]}><div key={"b"+i} className="imgHolder">
-                            <img key={"c"+i}  src={imgArr[i]} width="200" height="200"/>
-                                <div key={"d"+i} className="textHolder">
-                                    <p key={"e"+i}>ID: {i+1}</p>
-                                    <p key={"f"+i}>{titleArr[i]}</p>
+                <div>
+                    {console.log(this.props.index)}
+                        <div key={"a"+this.props.index} className="newsOuter">
+                            <a href={this.props.url} target="_blank"><div key={"b"+this.props.index} className="imgHolder">
+                            <img key={"c"+this.props.index}  src={this.props.img} />
+                                <div key={"d"+this.props.index} className="textHolder">
+                                    <p key={"e"+this.props.index} id="newsText">{this.props.index+1}</p><br/>
+                                    <p key={"f"+this.props.index} id="newsText">{this.props.title}</p>
                                 </div>
                             </div></a>
-                        </div>)}
+                        </div>
                     </div>
-                </div>
-            </div>
         )
     }
 }
